@@ -1,13 +1,13 @@
 """
 Views for the user API
 """
-from rest_framework import generics, authentication, permissions # type: ignore # noqa
+from rest_framework import generics, permissions # type: ignore # noqa
+from rest_framework_simplejwt.views import TokenObtainPairView # type: ignore # noqa
+from rest_framework_simplejwt.authentication import JWTAuthentication # type: ignore # noqa
 from user.serializers import (
     UserSerializer,
     AuthTokenSerializer,
 )
-from rest_framework_simplejwt.views import TokenObtainPairView # type: ignore # noqa
-from rest_framework_simplejwt.authentication import JWTAuthentication # type: ignore # noqa
 
 
 class CreateUserView(generics.CreateAPIView):

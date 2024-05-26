@@ -18,7 +18,7 @@ from drf_spectacular.views import ( # type: ignore # noqa
   SpectacularSwaggerView,
 )
 from django.contrib import admin # type: ignore # noqa
-from django.urls import path # type: ignore # noqa
+from django.urls import path, include # type: ignore # noqa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +29,6 @@ urlpatterns = [
       'api/docs/',
       SpectacularSwaggerView.as_view(url_name='api-schema'),
       name='api-docs',
-    )
+    ),
+    path('api/user/', include('user.urls')),
 ]
